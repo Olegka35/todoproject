@@ -11,8 +11,8 @@
     <http auto-config="true"  use-expressions="true">
         <intercept-url pattern="/rest" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/rest/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/todolist" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/todolist/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/basket" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/basket/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
         <form-login login-page="/login/" default-target-url="/index/"

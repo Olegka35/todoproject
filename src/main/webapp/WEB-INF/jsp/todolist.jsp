@@ -13,8 +13,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/mystyle.css" /> " />
-    <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/resources/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/resources/js/jquery-ui.js"></script>
     <script type="text/javascript" src="/resources/js/todolist.js"></script>
     <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
