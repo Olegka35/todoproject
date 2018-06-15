@@ -6,13 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="operator" />
         <module name="todolist-spring-mvc" />
         <module name="todoproject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="operator" target="1.7" />
       <module name="todolist-spring-mvc" target="1.5" />
-      <module name="todoproject" target="1.5" />
+      <module name="todoproject" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -9,21 +9,23 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <http auto-config="true"  use-expressions="true">
-        <!--<intercept-url pattern="/resources/**" access="permitAll" />-->
+        <intercept-url pattern="/rest" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/rest/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/todolist" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/todolist/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-        <form-login login-page="/login/" default-target-url="/todolist/"
+        <form-login login-page="/login/" default-target-url="/index/"
                     authentication-failure-url="/login/" />
         <logout logout-success-url="/login/" logout-url="/logout" />
         <access-denied-handler error-page="/403" />
     </http>
     <authentication-manager>
         <authentication-provider>
+            <password-encoder hash="md5"/>
             <jdbc-user-service data-source-ref="dataSource"
-                               users-by-username-query="SELECT Login, password, true FROM users WHERE Login=?"
-                               authorities-by-username-query="SELECT Login, role FROM users WHERE Login=?"/>
+                               users-by-username-query="CALL GetUser(?)"
+                               authorities-by-username-query="CALL GetUserRole(?)"/>
         </authentication-provider>
     </authentication-manager>
 

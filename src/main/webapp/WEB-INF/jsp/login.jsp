@@ -24,14 +24,14 @@
 <div class="container" style="width: 300px;">
     <c:url value="/j_spring_security_check" var="loginUrl" />
     <form action="${loginUrl}" method="post">
-        <h2>Please sign in</h2>
+        <h2>Enter login and password to authorize:</h2>
         <input type="text" name="j_username" placeholder="Login" required autofocus>
         <input type="password" class="form-control" name="j_password" placeholder="Password" required>
-        <button type="submit">Войти</button>
+        <button type="submit">Sign in</button>
     </form>
 </div>
 
-<h2>Нет аккаунта? <a href="/reg">Зарегистрируйтесь</a></h2>
+<h2>Need an account? <a href="/reg">Sign up</a></h2>
 
 </body>
 </html>

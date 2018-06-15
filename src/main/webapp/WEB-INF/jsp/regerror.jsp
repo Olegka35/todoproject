@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>ERROR</title>
+    <title>Register error</title>
 </head>
 <body>
-<h1>Аккаунт с данным логином уже существует!</h1>
-<a href="/reg">Вернуться на страницу регистрации</a>
+<h1>Account with this login is already registered!</h1>
+<a href="/reg">Return to register page</a>
+<br/>
+<a href="/login">Sign in with existing account</a>
 </body>
 </html>

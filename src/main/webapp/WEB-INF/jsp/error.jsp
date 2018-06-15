@@ -4,6 +4,6 @@
     <title>ERROR</title>
 </head>
 <body>
-    <h1>ERROR 404! The requested resource is not available!</h1>
+    <h1>The requested resource is not available!</h1>
 </body>
 </html>

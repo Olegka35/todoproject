@@ -16,5 +16,4 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
         <property name="password" value="${jdbc.password}" />
     </bean>
 
-    <!--<bean id="userDetailsService" class="todo.secure.UserDetailsServiceImpl"/>-->
 </beans>

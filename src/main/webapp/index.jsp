@@ -8,14 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>ToDo List</title>
+    <title>Mobile phones shop</title>
 </head>
 <body>
-    <h2>Hello World! This is TODO Application To be continue please push the button.</h2>
-    <div class="container">
-        <form action="/todoproject/todo" method="get">
-            <button type="submit">Start ToDo Application</button>
-        </form>
-    </div>
+    <h2>Welcome!</h2>
+    <ul>
+        <li><a href="/index">Go to article list page</a></li>
+        <li><a href="/login">Sign in</a></li>
+        <li><a href="/reg">Sign Up</a></li>
+    </ul>
 </body>
 </html>

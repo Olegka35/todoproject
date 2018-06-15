@@ -14,13 +14,11 @@
     <context:component-scan base-package="todo"/>
     <mvc:annotation-driven/>
 
-    <bean id="taskServiceImpl" class="todo.service.impl.TaskServiceImpl"/>
-    <bean id="userServiceImpl" class="todo.service.impl.UserServiceImpl"/>
-    <bean id="restController" class="todo.controller.RestController">
+    <bean id="operatorServiceImpl" class="todo.service.impl.OperatorServiceImpl"/>
+    <bean id="articleServiceImpl" class="todo.service.impl.ArticleServiceImpl"/>
+    <!--<bean id="restController" class="todo.controller.RestController">
         <property name="taskService" ref="taskServiceImpl"/>
-        <property name="userService" ref="userServiceImpl"/>
-    </bean>
-
-
+        <property name="operatorService" ref="userServiceImpl"/>
+    </bean>-->
 
 </beans>

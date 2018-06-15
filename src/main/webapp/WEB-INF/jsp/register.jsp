@@ -17,20 +17,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Register Page</title>
+    <script type="text/javascript" src="/resources/js/password_check.js"></script>
 </head>
 
 <body>
 
 <div class="container" style="width: 300px;">
     <form action="/reg" method="post">
-        <h2>Введите логин и пароль:</h2>
+        <h2>Register a new account</h2>
         <input type="text" name="login" placeholder="Login" required autofocus>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Зарегистрироваться</button>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <input type="password" name="password2" id="password2" placeholder="Accept Password" required>
+        <button type="submit">Sign up</button>
     </form>
 </div>
 
-<h2>Уже зарегистрированы? <a href="/login">Авторизуйтесь</a></h2>
+<h2>Already registered? <a href="/login">Sign in</a></h2>
 
 </body>
 </html>

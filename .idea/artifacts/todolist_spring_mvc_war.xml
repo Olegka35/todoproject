@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="todolist-spring-mvc:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="todolist-spring-mvc.war">
-      <element id="artifact" artifact-name="todolist-spring-mvc:war exploded" />
-    </root>
-  </artifact>
-</component>
