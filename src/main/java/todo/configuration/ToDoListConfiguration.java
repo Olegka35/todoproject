@@ -5,6 +5,6 @@ package todo.configuration;
  */
 public class ToDoListConfiguration {
 
-    public static final int TASKS_ON_PAGE = 15;
+    public static final int TASKS_ON_PAGE = 8;
 
 }

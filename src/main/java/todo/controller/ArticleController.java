@@ -4,7 +4,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import todo.domain.Article;
-import todo.domain.ArticleList;
+import todo.domain.html_requests.ArticleList;
 import todo.domain.BasketItem;
 import todo.domain.Operator;
 import todo.methods.SearchText;

@@ -28,7 +28,7 @@
 <body>
 <div class = "container-fluid">
     <div class = "row">
-        <div class = "col-md-7">
+        <div class = "col-md-6">
         <nav class="nav nav-inline">
             <a class="nav-link active" href="#"><security:authentication property="principal.username" /></a>
             <a class="nav-link" href="/index">Back to shop</a>
@@ -43,7 +43,7 @@
             </tr></thead>
             <tbody id="table_body">
             <c:forEach items="${basket}" var="basket_item">
-                <tr class="bi_row">
+                <tr id="bi_row_${basket_item.id}" class="bi_row">
                     <td class="wordwrap">${basket_item.article.type}</td>
                     <td class="wordwrap">${basket_item.article.price}$</td>
                     <td class="wordwrap">${basket_item.num}</td>
@@ -52,6 +52,55 @@
             </c:forEach>
             </tbody>
         </table>
+        <a class="btn btn-success" style="float: right" onclick="javascript: checkBasket();">Make an order</a>
+        </div>
+    </div>
+</div>
+
+<div id="make_order_popup" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Make an order</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="make_order_form" method="post" onsubmit="javascript: make_order(); return false;">
+                    <div class="form-group">
+                        <label for="input_name">Full Name</label>
+                        <input type="text" class="form-control" name="name" id="input_name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_email">Email address</label>
+                        <input type="email" class="form-control" name="email" id="input_email" aria-describedby="emailHelp" placeholder="Enter your email" required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_telephone">Telephone number</label>
+                        <input type="tel" class="form-control" name="telephone" id="input_telephone" placeholder="Enter your telephone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="input_address">Address</label>
+                        <input type="text" class="form-control" name="address" id="input_address" placeholder="Enter your address" required>
+                    </div>
+                    <fieldset class="form-group">
+                        <legend class="col-form-label">Choose pay type</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pay_type" id="gridRadios1" value="cash" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                                By cash
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pay_type" id="gridRadios2" value="bankcard">
+                            <label class="form-check-label" for="gridRadios2">
+                                By bank card
+                            </label>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

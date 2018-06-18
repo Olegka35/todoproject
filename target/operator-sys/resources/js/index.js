@@ -284,5 +284,79 @@ function selectProcrastinatedTasks()
 }
 
 function deleteFromBasket(id) {
-    console.log(id);
+    $.ajax({
+        type: "POST",
+        url: "/delete_from_basket",
+        contentType: "application/json",
+        data: {"id": id},
+        dataType: "json",
+        cache: false,
+        success: function(data) {
+            if(data.error === true) {
+                $.msgGrowl({
+                    type: 'error',
+                    title: 'Basket',
+                    text: data.text
+                });
+            }
+            else {
+                $.msgGrowl({
+                    type: 'success',
+                    title: 'Basket',
+                    text: 'Item was successfully removed from your basket'
+                });
+                $('#bi_row_'+id).remove();
+            }
+        }
+    });
+}
+
+function checkBasket() {
+    $.ajax({
+        type: "POST",
+        url: "/check_for_order",
+        contentType: "application/json",
+        dataType: "json",
+        success: function(data) {
+            if(data.error === true) {
+                $.msgGrowl({
+                    type: 'error',
+                    title: 'Creating the order',
+                    text: data.text
+                });
+            }
+            else {
+                $('#make_order_popup').modal();
+            }
+        }
+    });
+}
+
+function make_order() {
+    $.ajax({
+        type: "POST",
+        url: "/order",
+        contentType: "application/json",
+        data: JSON.stringify({name: $("#input_name").val(), email: $("#input_email").val(), telephone: $("#input_telephone").val(),
+            address: $("#input_address").val(), pay_type: $('input[name=pay_type]:checked').val() }),
+        dataType: "json",
+        success: function(data) {
+            if(data.error === true) {
+                $.msgGrowl({
+                    type: 'error',
+                    title: 'Creating the order',
+                    text: data.text
+                });
+            }
+            else {
+                $('#make_order_popup').modal('hide');
+                $.msgGrowl({
+                    type: 'success',
+                    title: 'Creating the order',
+                    text: 'Order have been created. Please, wait a telephone call from our operator.'
+                });
+                $('.bi_row').remove();
+            }
+        }
+    });
 }

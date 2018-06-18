@@ -7,7 +7,7 @@ import java.util.Map;
  * Created by Олег on 08.06.2018.
  */
 public interface DAO {
-    void add(String type, Map<String, String> params, String name_field);
+    Integer add(String type, Map<String, String> params, String name_field);
     void addAttr(String type, String attribute);
     void update(Integer id, Map<String, String> params);
     void delete(Integer id);

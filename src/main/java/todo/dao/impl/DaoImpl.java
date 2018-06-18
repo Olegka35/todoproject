@@ -34,7 +34,7 @@ public class DaoImpl implements DAO {
     }
 
     @Override
-    public void add(final String type, final Map<String, String> params, final String name_field) {
+    public Integer add(final String type, final Map<String, String> params, final String name_field) {
         String ADD_PARAMS = "INSERT INTO params VALUES (?, (SELECT attribute_id FROM attribute WHERE attribute_name = ?), ?)";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -57,6 +57,7 @@ public class DaoImpl implements DAO {
                 jdbcTemplate.update(ADD_PARAMS, insert_id, pair.getKey(), pair.getValue());
             }
         }
+        return insert_id;
     }
 
     @Override

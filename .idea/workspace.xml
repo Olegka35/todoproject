@@ -97,38 +97,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="basket.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/basket.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="49" column="67" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="67" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Article.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/Article.java">
+      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+            <state relative-caret-position="221">
+              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="15" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1322#1323#0" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1460#1461#0" expanded="true" />
+                <element signature="e#1490#1491#0" expanded="true" />
+                <element signature="e#2342#2343#0" expanded="true" />
+                <element signature="e#2372#2373#0" expanded="true" />
+                <element signature="e#2418#2419#0" expanded="true" />
+                <element signature="e#2456#2457#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Attribute.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/Attribute.java">
+      <file leaf-file-name="ArticleService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/ArticleService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/todo/controller/OrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="61" column="97" lean-forward="true" selection-start-line="61" selection-start-column="97" selection-end-line="61" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orders.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orders.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="18" column="59" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="orders.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/orders.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1445">
+              <caret line="85" column="6" selection-start-line="45" selection-end-line="85" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ToDoListConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/todo/configuration/ToDoListConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -136,22 +183,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="286" column="4" selection-start-line="286" selection-start-column="4" selection-end-line="286" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/todo/controller/OrderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="115" column="37" lean-forward="true" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2279#2295#0" expanded="true" />
-                <element signature="e#3798#3814#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -164,16 +197,15 @@
         <option value="CSS File" />
         <option value="Enum" />
         <option value="spring-beans.schema" />
-        <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>results</find>
       <find>GetWatchPage</find>
       <find>login</find>
       <find>object_id</find>
@@ -203,6 +235,7 @@
       <find>bootstrap.min.js</find>
       <find>acc_error</find>
       <find>this</find>
+      <find>getDateFromMap</find>
     </findStrings>
     <dirStrings>
       <dir>I:\Oleg\todolist-spring-mvc\todolist-spring-mvc</dir>
@@ -216,14 +249,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/todo/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/todo/methods/HashString.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/acc_error.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin.js" />
-        <option value="$PROJECT_DIR$/src/main/java/todo/domain/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/todo/domain/Task.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-1.12.4.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-ui.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.min.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/todo/domain/Operator.java" />
@@ -232,20 +257,17 @@
         <option value="$PROJECT_DIR$/src/main/resources/datasource.xml" />
         <option value="$PROJECT_DIR$/src/main/java/todo/service/TaskService.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/controller/RestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/todo/service/impl/TaskServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/rest-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/java/todo/configuration/SpringJDBCConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/operator.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/todo/domain/Attribute.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/params.js" />
-        <option value="$PROJECT_DIR$/src/main/java/todo/dao/DAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/methods/TaskCookie.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/methods/ArticleCookie.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/domain/ArticleList.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/service/OperatorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/domain/Article.java" />
-        <option value="$PROJECT_DIR$/src/main/java/todo/dao/impl/DaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/service/ArticleService.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
@@ -254,19 +276,30 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/mystyle.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/params.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/todolist.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/todo/service/BasketService.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/service/impl/ArticleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/controller/ArticleController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-security.xml" />
         <option value="$PROJECT_DIR$/src/main/java/todo/domain/BasketItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/todo/service/impl/BasketServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/service/impl/OperatorServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/todo/controller/OperatorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/todo/domain/AddToBasketAttr.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/domain/OrderItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/domain/Order.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/service/impl/TaskServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/service/BasketService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/service/impl/BasketServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/basket.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/domain/html_requests/MakeOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/dao/impl/DaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/dao/DAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/index.js" />
         <option value="$PROJECT_DIR$/src/main/java/todo/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/todo/configuration/ToDoListConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orders.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/orders.js" />
       </list>
     </option>
   </component>
@@ -315,8 +348,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -357,6 +388,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="todo" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="operator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="operator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="todo" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -375,7 +415,27 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="todo" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="operator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="operator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="todo" type="462c0819:PsiDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="operator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="operator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="todo" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="html_requests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="operator" type="b2602c69:ProjectViewProjectNode" />
@@ -448,6 +508,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -888,6 +950,13 @@
       <workItem from="1529009385552" duration="2373000" />
       <workItem from="1529045045297" duration="213000" />
       <workItem from="1529045597620" duration="16867000" />
+      <workItem from="1529090473873" duration="5619000" />
+      <workItem from="1529136501369" duration="4636000" />
+      <workItem from="1529143156513" duration="3350000" />
+      <workItem from="1529182732270" duration="598000" />
+      <workItem from="1529219079052" duration="11559000" />
+      <workItem from="1529265463605" duration="2148000" />
+      <workItem from="1529302389485" duration="366000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1529046578090</created>
@@ -900,7 +969,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="663318000" />
+    <option name="totallyTimeSpent" value="691594000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -918,8 +987,8 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3909853" side_tool="true" weight="0.4219489" />
       <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32978722" />
-      <window_info anchor="right" id="Maven Projects" order="10" visible="true" weight="0.09701493" />
-      <window_info anchor="bottom" id="Database Changes" weight="0.32950193" />
+      <window_info anchor="right" id="Maven Projects" order="10" weight="0.09701493" />
+      <window_info anchor="bottom" id="Database Changes" order="14" weight="0.32950193" />
       <window_info id="Capture Tool" order="8" />
       <window_info id="Designer" order="3" />
       <window_info anchor="right" id="Database" order="5" weight="0.123958334" />
@@ -928,7 +997,6 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49784714" weight="0.38601533" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49573562" weight="0.21839081" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.3249476" weight="0.25862068" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="bottom" id="Java Enterprise" order="8" sideWeight="0.49570817" weight="0.32978722" />
@@ -937,21 +1005,60 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6090147" weight="0.31992337" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.32950193" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32950193" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.55" visible="true" weight="0.17910448" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.55" visible="true" weight="0.19296375" />
       <window_info id="Web" order="6" sideWeight="0.3854489" side_tool="true" weight="0.31458333" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49790356" weight="0.29501915" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49790356" weight="0.29501915" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Properties" order="4" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.3249476" weight="0.25862068" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Bean Validation" order="8" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Properties" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.34052533" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32978722" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Spring" order="10" weight="0.32950193" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6090147" weight="0.31992337" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Properties" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32950193" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.34052533" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3909853" side_tool="true" weight="0.4219489" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.3249476" weight="0.25862068" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49573562" weight="0.21839081" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" sideWeight="0.49570817" weight="0.32978722" />
+      <window_info anchor="bottom" id="Database Changes" order="15" weight="0.32950193" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" weight="0.13984674" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="10" visible="true" weight="0.09701493" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49790356" weight="0.29501915" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.55" visible="true" weight="0.18869936" />
+      <window_info anchor="right" id="Database" order="5" weight="0.123958334" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Web" order="6" sideWeight="0.3854489" side_tool="true" weight="0.31458333" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info id="Structure" order="1" sideWeight="0.45" side_tool="true" weight="0.17910448" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="right" id="Bean Validation" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49784714" weight="0.38601533" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -994,137 +1101,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-496">
-          <caret line="21" column="54" lean-forward="true" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/appServlet-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/configuration/ToDoListConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/Operator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#485#486#0" />
-            <element signature="e#510#511#0" />
-            <element signature="e#543#544#0" />
-            <element signature="e#571#572#0" />
-            <element signature="e#603#604#0" />
-            <element signature="e#631#632#0" />
-            <element signature="e#673#674#0" />
-            <element signature="e#702#703#0" />
-            <element signature="e#737#738#0" />
-            <element signature="e#768#769#0" />
-            <element signature="e#816#817#0" />
-            <element signature="e#884#885#0" />
-            <element signature="e#915#916#0" />
-            <element signature="e#942#943#0" />
-            <element signature="e#982#983#0" />
-            <element signature="e#1009#1010#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/methods/ArticleCookie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="30" column="82" selection-start-line="30" selection-start-column="82" selection-end-line="30" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/OperatorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/dao/DAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="imports" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/todo/methods/FilterQuery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/dao/impl/TaskDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="192" column="48" lean-forward="true" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
-          <folding>
-            <marker date="1500713910485" expanded="true" signature="1114:1209" ph="INSERT INTO params... " />
-            <marker date="1500713910485" expanded="true" signature="1145:1204" ph="SELECT attri... attribute" />
-            <marker date="1500713910485" expanded="true" signature="1387:1481" ph="INSERT INTO object... " />
-            <marker date="1500713910485" expanded="true" signature="1418:1476" ph="SELECT objec... object_type" />
-            <marker date="1500713910485" expanded="true" signature="2806:2844" ph="DELETE FROM " />
-            <marker date="1500713910485" expanded="true" signature="2885:2923" ph="DELETE FROM " />
-            <marker date="1500713910485" expanded="true" signature="3121:3252" ph="SELECT at.at... params" />
-            <marker date="1500713910485" expanded="true" signature="4035:4147" ph="SELECT objec... object" />
-            <marker date="1500713910485" expanded="true" signature="4088:4146" ph="SELECT objec... object_type" />
-            <marker date="1500713910485" expanded="true" signature="4353:4476" ph="SELECT objec... object" />
-            <marker date="1500713910485" expanded="true" signature="4406:4464" ph="SELECT objec... object_type" />
-            <marker date="1500713910485" expanded="true" signature="5606:5882" ph="SELECT obj.o... object" />
-            <marker date="1500713910485" expanded="true" signature="5716:5775" ph="SELECT attri... attribute" />
-            <marker date="1500713910485" expanded="true" signature="5815:5873" ph="SELECT objec... object_type" />
-            <marker date="1500713910485" expanded="true" signature="6197:6468" ph="SELECT obj.o... object" />
-            <marker date="1500713910485" expanded="true" signature="6307:6366" ph="SELECT attri... attribute" />
-            <marker date="1500713910485" expanded="true" signature="6409:6467" ph="SELECT objec... object_type" />
-            <marker date="1500713910485" expanded="true" signature="6710:7034" ph="SELECT obj.o... object" />
-            <marker date="1500713910485" expanded="true" signature="6862:6921" ph="SELECT attri... attribute" />
-            <marker date="1500713910485" expanded="true" signature="6964:7022" ph="SELECT objec... object_type" />
-            <marker date="1500713910485" expanded="true" signature="7357:7474" ph="SELECT DISTI... object" />
-            <marker date="1500713910485" expanded="true" signature="8956:9073" ph="SELECT DISTI... object" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1163,15 +1143,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap.min.js" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/bootstrap-4.1.1-dist/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
@@ -1186,71 +1158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/BasketService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/dao/impl/DaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="198" column="38" selection-start-line="198" selection-start-column="25" selection-end-line="198" selection-end-column="38" />
-          <folding>
-            <marker date="1528809498873" expanded="true" signature="1193:1288" ph="INSERT INTO params... " />
-            <marker date="1528809498873" expanded="true" signature="1224:1283" ph="SELECT attri... attribute" />
-            <marker date="1528809498873" expanded="true" signature="1466:1560" ph="INSERT INTO object... " />
-            <marker date="1528809498873" expanded="true" signature="1497:1555" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="2402:2437" ph="INSERT INTO attribute... " />
-            <marker date="1528809498873" expanded="true" signature="2473:2574" ph="INSERT INTO attribute... " />
-            <marker date="1528809498873" expanded="true" signature="2511:2569" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="3573:3611" ph="DELETE FROM " />
-            <marker date="1528809498873" expanded="true" signature="3652:3690" ph="DELETE FROM " />
-            <marker date="1528809498873" expanded="true" signature="3899:3943" ph="DELETE FROM " />
-            <marker date="1528809498873" expanded="true" signature="3986:4037" ph="DELETE FROM " />
-            <marker date="1528809498873" expanded="true" signature="4078:4119" ph="DELETE FROM " />
-            <marker date="1528809498873" expanded="true" signature="4385:4516" ph="SELECT at.at... params" />
-            <marker date="1528809498873" expanded="true" signature="5299:5411" ph="SELECT objec... object" />
-            <marker date="1528809498873" expanded="true" signature="5352:5410" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="5617:5740" ph="SELECT objec... object" />
-            <marker date="1528809498873" expanded="true" signature="5670:5728" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="6918:7036" ph="SELECT DISTI... object" />
-            <marker date="1528809498873" expanded="true" signature="8415:8691" ph="SELECT obj.o... object" />
-            <marker date="1528809498873" expanded="true" signature="8525:8584" ph="SELECT attri... attribute" />
-            <marker date="1528809498873" expanded="true" signature="8624:8682" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="9006:9277" ph="SELECT obj.o... object" />
-            <marker date="1528809498873" expanded="true" signature="9116:9175" ph="SELECT attri... attribute" />
-            <marker date="1528809498873" expanded="true" signature="9218:9276" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="9519:9843" ph="SELECT obj.o... object" />
-            <marker date="1528809498873" expanded="true" signature="9671:9730" ph="SELECT attri... attribute" />
-            <marker date="1528809498873" expanded="true" signature="9773:9831" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="10166:10283" ph="SELECT DISTI... object" />
-            <marker date="1528809498873" expanded="true" signature="11765:11882" ph="SELECT DISTI... object" />
-            <marker date="1528809498873" expanded="true" signature="12434:12634" ph="SELECT attri... attribute" />
-            <marker date="1528809498873" expanded="true" signature="12508:12633" ph="SELECT attri... attribute_object" />
-            <marker date="1528809498873" expanded="true" signature="12574:12632" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="12954:13178" ph="SELECT attri... attribute" />
-            <marker date="1528809498873" expanded="true" signature="13119:13177" ph="SELECT objec... object_type" />
-            <marker date="1528809498873" expanded="true" signature="13501:13727" ph="SELECT a.att... attribute" />
-            <marker date="1528809498873" expanded="true" signature="13668:13726" ph="SELECT objec... object_type" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/impl/ArticleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="e#1885#1886#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/acc_error.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1261,23 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="85" />
-          <folding>
-            <marker date="1528552989396" expanded="false" signature="874:885" ph=" { " />
-            <marker date="1528552989396" expanded="false" signature="904:910" ph=" }" />
-            <marker date="1528552989396" expanded="false" signature="966:977" ph=" { " />
-            <marker date="1528552989396" expanded="false" signature="1008:1014" ph=" }" />
-            <marker date="1528552989396" expanded="false" signature="1062:1073" ph=" { " />
-            <marker date="1528552989396" expanded="false" signature="1096:1102" ph=" }" />
-            <marker date="1528552989396" expanded="false" signature="1170:1181" ph=" { " />
-            <marker date="1528552989396" expanded="false" signature="1220:1226" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1295,24 +1185,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/ArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/todo/methods/HashString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/impl/OperatorServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -1346,44 +1222,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/moment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1020">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-1020" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/todo/controller/OperatorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2228">
           <caret line="170" column="7" selection-start-line="170" selection-start-column="7" selection-end-line="170" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/AddToBasketAttr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding>
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/impl/BasketServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="77" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1398,51 +1243,127 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255">
           <caret line="17" column="32" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/Article.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/html_requests/ArticleList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="38" />
+        <state relative-caret-position="119">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/basket.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/Operator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="49" column="67" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="67" />
+        <state relative-caret-position="748">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/index.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/html_requests/AddToBasketAttr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="286" column="4" selection-start-line="286" selection-start-column="4" selection-end-line="286" selection-end-column="20" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/impl/TaskServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="154" column="136" selection-start-line="154" selection-start-column="136" selection-end-line="154" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/dao/impl/TaskDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="192" column="48" lean-forward="true" selection-start-line="192" selection-start-column="48" selection-end-line="192" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="116" column="152" selection-start-line="116" selection-start-column="152" selection-end-line="116" selection-end-column="173" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/BasketService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/impl/BasketServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/todo/controller/ArticleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="48" />
+        <state relative-caret-position="534">
+          <caret line="94" column="62" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/ArticleList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/impl/OperatorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="36" column="15" lean-forward="true" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/html_requests/MakeOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/OrderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="24" />
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/dao/impl/DaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/OrderItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="73" />
+          <folding>
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1456,15 +1377,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/todo/controller/OrderController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/dao/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="115" column="37" lean-forward="true" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
+        <state relative-caret-position="289">
+          <caret line="18" column="110" selection-start-line="18" selection-start-column="110" selection-end-line="18" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/domain/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="15" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2279#2295#0" expanded="true" />
-            <element signature="e#3798#3814#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1460#1461#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2372#2373#0" expanded="true" />
+            <element signature="e#2418#2419#0" expanded="true" />
+            <element signature="e#2456#2457#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/service/ArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/basket.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/configuration/ToDoListConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="85" column="6" selection-start-line="45" selection-end-line="85" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/orders.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="18" column="59" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/todo/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="61" column="97" lean-forward="true" selection-start-line="61" selection-start-column="97" selection-end-line="61" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
