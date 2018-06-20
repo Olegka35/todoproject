@@ -39,8 +39,12 @@ function showArticleInfo(article)
         $('#description').append("<b>" + key + ": </b>" + value + "</br>");
     });
     $('#description').append("<br/><input id='number_basket' type='number' value='1' min='0' max='" + article.num + "'><button id='basket'>ADD TO BASKET</button><br/><br/>");
-    $('#description').append("<button id='edit'>EDIT</button><br/><br/>");
-    $('#description').append("<button id='delete'>DELETE</button><br/><br/>");
+    if($('#isManager').val() === "true") {
+        $('#description').append("<button id='edit'>EDIT</button><br/><br/>");
+    }
+    if($('#isAdmin').val() === "true") {
+        $('#description').append("<button id='delete'>DELETE</button><br/><br/>");
+    }
     $('#basket').click(function () {
         addToBasket(article);
     });
@@ -68,7 +72,7 @@ function showEdit(article) {
 
 function addToBasket(article) {
     var num = Number.parseInt($('#number_basket').val());
-    if(num < 0 || num > article.num) {
+    if(num <= 0 || num > article.num) {
         $.msgGrowl({
             type: 'error',
             title: 'Incorrect num',
@@ -107,7 +111,7 @@ function sort(field)
 {
     $.ajax({
         type: "POST",
-        url: "sort",
+        url: "/index/sort",
         contentType: "application/json",
         data: ({"field": field}),
         dataType: "json",
@@ -145,7 +149,7 @@ function searchArticle() {
     var text = $('#search').val();
     $.ajax({
         type: "POST",
-        url: "search",
+        url: "/index/search",
         contentType: "application/json",
         data: JSON.stringify({text: text}),
         dataType: "json",
@@ -178,7 +182,7 @@ function goPage(page)
     if(!(page < 1 || page > pageNum)) {
         $.ajax({
             type: "POST",
-            url: "page",
+            url: "/index/page",
             contentType: "application/json",
             data: ({"page": page}),
             dataType: "json",
@@ -238,7 +242,7 @@ function in_array(value, array)
     return false;
 }
 
-function findUsers() {
+/*function findUsers() {
     $('#submitEdit').prop('disabled', true);
     var input_search = $("#user").val();
     if (input_search.length >= 2 && input_search.length < 30)
@@ -272,16 +276,16 @@ function findUsers() {
 function selectProcrastinatedTasks()
 {
     $('.tabrow').each(function () {
-        if($('#todo-' + $(this).prop('id') + '-status').text() == getStatus(3))
+        if($('#oper_project-' + $(this).prop('id') + '-status').text() == getStatus(3))
         {
             $(this).css({'background-color': 'gray'});
         }
-        else if(Date.parse($("#todo-" + $(this).prop('id') + "-duedate").text()) - Date.parse(new Date()) < 0)
+        else if(Date.parse($("#oper_project-" + $(this).prop('id') + "-duedate").text()) - Date.parse(new Date()) < 0)
         {
             $(this).css({'background-color': 'tomato'});
         }
     })
-}
+}*/
 
 function deleteFromBasket(id) {
     $.ajax({
@@ -300,6 +304,7 @@ function deleteFromBasket(id) {
                 });
             }
             else {
+                getOverallPrice();
                 $.msgGrowl({
                     type: 'success',
                     title: 'Basket',
@@ -358,5 +363,11 @@ function make_order() {
                 $('.bi_row').remove();
             }
         }
+    });
+}
+
+function getOverallPrice() {
+    $.post('/basket_price', function (data) {
+        $('#ov_price').text(data);
     });
 }

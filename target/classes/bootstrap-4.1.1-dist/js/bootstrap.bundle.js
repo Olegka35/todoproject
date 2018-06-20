@@ -4792,7 +4792,7 @@
         }
       }; // ----------------------------------------------------------------------
       // the following methods are used to handle overflowing modals
-      // todo (fat): these should probably be refactored out of modal.js
+      // oper_project (fat): these should probably be refactored out of modal.js
       // ----------------------------------------------------------------------
 
 

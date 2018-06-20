@@ -26,23 +26,30 @@
 </head>
 <body>
 
-<security:authorize access="isAuthenticated()">
-    You are logged in as <b><a href="<c:url value="/basket"/>"><security:authentication property="principal.username" /></a></b> |
-    <a href="<c:url value="/logout"/>">Logout</a>
-</security:authorize>
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-md-6">
+            <nav class="nav nav-inline">
+                <security:authorize access="isAuthenticated()">
+                    <b><a class="nav-link active" href="<c:url value="/basket"/>"><security:authentication property="principal.username" /></a></b>
+                    <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+                        <a class="nav-link" href="<c:url value="/params"/>">Moderator page</a>
+                        <a class="nav-link" href="<c:url value="/orders"/>">Order list</a>
+                    </security:authorize>
+                    <a class="nav-link" href="<c:url value="/logout"/>">Logout</a>
+                    <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+                        <b><a class="nav-link btn btn-primary" href="#popup_add" data-toggle="modal">ADD ARTICLE</a></b>
+                    </security:authorize>
+                </security:authorize>
+                <security:authorize access="!isAuthenticated()">
+                    <a class="nav-link" href="<c:url value="/login"/>">Login</a>
+                    <a class="nav-link" href="<c:url value="/reg"/>">Register</a>
+                </security:authorize>
+            </nav>
+        </div>
+    </div>
+</div>
 
-<security:authorize access="!isAuthenticated()">
-    <a href="<c:url value="/login"/>">Login</a> |
-    <a href="<c:url value="/reg"/>">Register</a>
-</security:authorize>
-
-<security:authorize access="hasRole('ROLE_ADMIN')">
-    | <a href="<c:url value="/params/"/>">Moderator page</a>
-</security:authorize>
-
-<a href="#popup_add" class="btn btn-primary" data-toggle="modal">ADD ARTICLE</a>
-
-<br/>
 <div class = "container-fluid">
 <div class = "row">
 <div class = "col-md-7">
@@ -162,11 +169,11 @@
     </div>
 </div>
 
-<security:authorize access="hasRole('ROLE_ADMIN')"><input id="isAdmin" type="hidden" hidden="true" value="true"/></security:authorize>
-<security:authorize access="!hasRole('ROLE_ADMIN')"><input id="isAdmin" type="hidden" hidden="true" value="false"/></security:authorize>
+<security:authorize access="hasRole('ROLE_ADMIN')"><input id="isAdmin" type="hidden" value="true"/></security:authorize>
+<security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')"><input id="isManager" type="hidden" value="true"/></security:authorize>
 
-<input id="pageNum" type="hidden" hidden="true" value="${articleList.pageNum}"/>
-<input id="page" type="hidden" hidden="true" value="${articleList.page}"/>
-<input id="user_login" type="hidden" hidden="true" value="${articleList.login}"/>
+<input id="pageNum" type="hidden" value="${articleList.pageNum}"/>
+<input id="page" type="hidden" value="${articleList.page}"/>
+<input id="user_login" type="hidden" value="${articleList.login}"/>
 </body>
 </html>

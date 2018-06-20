@@ -32,6 +32,10 @@
         <nav class="nav nav-inline">
             <a class="nav-link active" href="#"><security:authentication property="principal.username" /></a>
             <a class="nav-link" href="/index">Back to shop</a>
+            <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+                <a class="nav-link" href="<c:url value="/params"/>">Moderator page</a>
+                <a class="nav-link" href="<c:url value="/orders"/>">Order list</a>
+            </security:authorize>
             <a class="nav-link" href="<c:url value="/logout"/>">Logout</a>
         </nav>
 
@@ -50,6 +54,7 @@
                     <td class="wordwrap"><button id="delete_basket_${basket_item.id}" type="button" class="btn btn-primary delbasket">Delete</button></td>
                 </tr>
             </c:forEach>
+            <tr class="table-info"><td colspan="4"><b>Overall price</b>: $<a id="ov_price"></a></td></tr>
             </tbody>
         </table>
         <a class="btn btn-success" style="float: right" onclick="javascript: checkBasket();">Make an order</a>
@@ -104,5 +109,9 @@
         </div>
     </div>
 </div>
+
+<script language="JavaScript" type="text/javascript">
+    getOverallPrice();
+</script>
 </body>
 </html>

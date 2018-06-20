@@ -56,9 +56,9 @@
                         <td>${article.id}</td>
                         <td id="todo-${article.id}-name" class="wordwrap">${article.name}</td>
                         <td id="todo-${article.id}-desc" class="wordwrap"><div class="heightlimit">${article.description}</div></td>
-                        <td id="todo-${article.id}-prior"><script language="JavaScript" type="text/javascript">document.getElementById("todo-${article.id}-prior").innerHTML = getPriority(${article.priority});</script></td>
-                        <td id="todo-${article.id}-status"><script language="JavaScript" type="text/javascript">document.getElementById("todo-${article.id}-status").innerHTML = getStatus(${article.status});</script></td>
-                        <td id="todo-${article.id}-duedate"><script language="JavaScript" type="text/javascript">document.getElementById("todo-${article.id}-duedate").innerHTML = formatDate('${article.dueDate}');</script></td>
+                        <td id="todo-${article.id}-prior"><script language="JavaScript" type="text/javascript">document.getElementById("oper_project-${article.id}-prior").innerHTML = getPriority(${article.priority});</script></td>
+                        <td id="todo-${article.id}-status"><script language="JavaScript" type="text/javascript">document.getElementById("oper_project-${article.id}-status").innerHTML = getStatus(${article.status});</script></td>
+                        <td id="todo-${article.id}-duedate"><script language="JavaScript" type="text/javascript">document.getElementById("oper_project-${article.id}-duedate").innerHTML = formatDate('${article.dueDate}');</script></td>
                         <td><a class="show_popup" rel="edit" onclick="showEdit(${article.id}, ${article.priority}, ${article.status}, '${articleList.login}'); return false;"><span class="icon">✍</span></a></td>
                         <security:authorize access="hasRole('ROLE_ADMIN')">
                             <td><a href="delete/${article.id}"><span class="icon">✖</span></a></td>

@@ -13,7 +13,7 @@ function add_param() {
     else {
         $.ajax({
             type: "POST",
-            url: "addparam",
+            url: "/params/addparam",
             contentType: "application/json",
             data: JSON.stringify({name: $('#newparam').val()}),
             dataType: "json",
@@ -38,7 +38,7 @@ function deleteAttr(id)
 {
     $.ajax({
         type: "POST",
-        url: "delete",
+        url: "/params/delete",
         contentType: "application/json",
         data: JSON.stringify({id: id}),
         dataType: "json",

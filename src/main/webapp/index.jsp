@@ -13,9 +13,9 @@
 <body>
     <h2>Welcome!</h2>
     <ul>
-        <li><a href="/index">Go to article list page</a></li>
-        <li><a href="/login">Sign in</a></li>
-        <li><a href="/reg">Sign Up</a></li>
+        <li><a href="/index/">Go to article list page</a></li>
+        <li><a href="/login/">Sign in</a></li>
+        <li><a href="/reg/">Sign Up</a></li>
     </ul>
 </body>
 </html>

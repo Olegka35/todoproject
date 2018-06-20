@@ -10,6 +10,6 @@
 
     <mvc:annotation-driven />
     <context:annotation-config/>
-    <context:component-scan base-package="todo" />
+    <context:component-scan base-package="oper_project" />
 
 </beans>

@@ -12,9 +12,9 @@
 <html>
 <head>
     <title>Article params management</title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" /> " />
-    <script type="text/javascript" src="/resources/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/resources/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/resources/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/bootstrap-4.1.1-dist/css/bootstrap.min.css" /> " />
     <script type="text/javascript" src="/resources/js/jquery-ui.js"></script>
     <script type="text/javascript" src="/resources/js/jquery.textchange.js"></script>
     <script type="text/javascript" src="/resources/js/params.js"></script>
@@ -22,6 +22,20 @@
     <script src="/resources/msgGrowl/msgGrowl.min.js"></script>
 </head>
 <body>
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-md-6">
+            <nav class="nav nav-inline">
+                <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+                    <b><a class="nav-link active" href="<c:url value="/basket"/>"><security:authentication property="principal.username" /></a></b>
+                    <a class="nav-link" href="<c:url value="/index"/>">Main page</a>
+                    <a class="nav-link" href="<c:url value="/orders"/>">Order list</a>
+                    <a class="nav-link" href="<c:url value="/logout"/>">Logout</a>
+                </security:authorize>
+            </nav>
+        </div>
+    </div>
+</div>
 <table>
     <tbody>
     <tr>
