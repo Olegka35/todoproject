@@ -1,5 +1,7 @@
 package oper_project.domain;
 
+import oper_project.service.impl.ArticleServiceImpl;
+
 public class BasketItem {
     private Integer id;
     private Integer userID;
@@ -46,5 +48,15 @@ public class BasketItem {
 
     public void setNum(Integer num) {
         this.num = num;
+    }
+
+    @Override
+    public String toString() {
+        return "BasketItem{" +
+                "id=" + id +
+                ", userID=" + userID +
+                ", article=" + article +
+                ", num=" + num +
+                '}';
     }
 }

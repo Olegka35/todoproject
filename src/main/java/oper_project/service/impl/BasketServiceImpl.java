@@ -1,16 +1,13 @@
 package oper_project.service.impl;
 
+import oper_project.domain.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Service;
 import oper_project.configuration.SpringJDBCConfiguration;
 import oper_project.dao.DAO;
-import oper_project.domain.BasketItem;
 import oper_project.service.BasketService;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service("basketService")
 public class BasketServiceImpl implements BasketService {
@@ -65,10 +62,14 @@ public class BasketServiceImpl implements BasketService {
     }
 
     @Override
-    public BasketItem getByArticle(Integer articleID) {
-        Integer id = dao.getIdByParam("basket_item", "Basket_ArticleID", articleID.toString());
-        if(id == null) return null;
-        return getById(id);
+    public BasketItem getByArticle(Integer userID, Integer articleID) {
+        List<Integer> ids = dao.getIDsByParam("basket_item", "Basket_UserID", userID.toString());
+        for(Integer id: ids) {
+            BasketItem basketItem = getById(id);
+            if(basketItem.getArticle().getId() == articleID)
+                return basketItem;
+        }
+        return null;
     }
 
     @Override
@@ -99,5 +100,18 @@ public class BasketServiceImpl implements BasketService {
             price += item.getNum() * item.getArticle().getPrice();
         }
         return price;
+    }
+
+    @Override
+    public void makeOrder(Operator user, String name, String email, String telephone, String address, String pay_type) {
+        List<OrderItem> details = new ArrayList<>();
+        List<BasketItem> basketItems = new BasketServiceImpl().getByUserID(user.getID());
+        for(BasketItem item: basketItems) {
+            Article article = item.getArticle();
+            details.add(new OrderItem(article.getType(), article.getPrice(), item.getNum()));
+            article.setNum(article.getNum() - item.getNum());
+            new ArticleServiceImpl().update(article);
+        }
+        new OrderServiceImpl().addOrder(new Order(-1, user, name, email, address, telephone, new Date(), new BasketServiceImpl().getPrice(user.getID()), 0, pay_type, details));
     }
 }

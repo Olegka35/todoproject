@@ -11,19 +11,9 @@ import java.util.Map;
  */
 public class ArticleList {
     private List<Article> articleList;
-    private String login = "Guest";
     private Integer page;
     private Integer pageNum;
-    private String search;
     private List<Map<String, Object>> params;
-
-    public List<Map<String, Object>> getParams() {
-        return params;
-    }
-
-    public void setParams(List<Map<String, Object>> params) {
-        this.params = params;
-    }
 
     public List<Article> getArticleList() {
         return articleList;
@@ -31,14 +21,6 @@ public class ArticleList {
 
     public void setArticleList(List<Article> articleList) {
         this.articleList = articleList;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public Integer getPage() {
@@ -49,11 +31,6 @@ public class ArticleList {
         this.page = page;
     }
 
-    public void setPageNumEx(Integer num)
-    {
-        setPageNum(num / PageConfiguration.ITEMS_ON_PAGE + (num % PageConfiguration.ITEMS_ON_PAGE > 0 ? 1 : 0));
-    }
-
     public Integer getPageNum() {
         return pageNum;
     }
@@ -62,12 +39,17 @@ public class ArticleList {
         this.pageNum = pageNum;
     }
 
-    public String getSearch() {
-        return search;
+    public void setPageNumEx(Integer num)
+    {
+        setPageNum(num / PageConfiguration.ITEMS_ON_PAGE + (num % PageConfiguration.ITEMS_ON_PAGE > 0 ? 1 : 0));
     }
 
-    public void setSearch(String search) {
-        this.search = search;
+    public List<Map<String, Object>> getParams() {
+        return params;
+    }
+
+    public void setParams(List<Map<String, Object>> params) {
+        this.params = params;
     }
 }
 

@@ -32,12 +32,12 @@
             <nav class="nav nav-inline">
                 <security:authorize access="isAuthenticated()">
                     <b><a class="nav-link active" href="<c:url value="/basket"/>"><security:authentication property="principal.username" /></a></b>
-                    <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+                    <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">
                         <a class="nav-link" href="<c:url value="/params"/>">Moderator page</a>
                         <a class="nav-link" href="<c:url value="/orders"/>">Order list</a>
                     </security:authorize>
                     <a class="nav-link" href="<c:url value="/logout"/>">Logout</a>
-                    <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+                    <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">
                         <b><a class="nav-link btn btn-primary" href="#popup_add" data-toggle="modal">ADD ARTICLE</a></b>
                     </security:authorize>
                 </security:authorize>
@@ -87,9 +87,6 @@
             </div>
         </div>
     </td>
-    <script language="JavaScript" type="text/javascript">
-        $('#search').val('${articleList.search}');
-    </script>
 </div>
 </div></div>
 
@@ -101,7 +98,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
-                <form method="post" action="edit/">
+                <form id="edit_form_post" method="post" onsubmit="javascript: editArticle(); return false;">
                     <table id="edititems">
                         <tr>
                             <td>ID:</td>
@@ -141,7 +138,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
-                <form method="post" action="add/">
+                <form id="add_form_post" method="post" onsubmit="javascript: addArticle(); return false;">
                     <table id="additems">
                         <tr>
                             <td>Type:</td>
@@ -174,6 +171,7 @@
 
 <input id="pageNum" type="hidden" value="${articleList.pageNum}"/>
 <input id="page" type="hidden" value="${articleList.page}"/>
-<input id="user_login" type="hidden" value="${articleList.login}"/>
+<input id="sort" type="hidden" value="object_id"/>
+<input id="reversed" type="hidden" value="0"/>
 </body>
 </html>

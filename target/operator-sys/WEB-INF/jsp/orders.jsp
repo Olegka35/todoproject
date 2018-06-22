@@ -37,9 +37,9 @@
             <table id="orders" class="lux">
                 <thead><tr>
                     <th onclick="sort('object_id');">ORDER_ID</th>
-                    <th onclick="sort('Price');">Price</th>
-                    <th onclick="sort('Num');">Date</th>
-                    <th onclick="sort('Num');">Status</th>
+                    <th onclick="sort('Order_Price');">Price</th>
+                    <th onclick="sort('Order_Date');">Date</th>
+                    <th onclick="sort('Order_Status');">Status</th>
                     <th></th>
                 </tr></thead>
                 <tbody id="table_body">
@@ -50,12 +50,14 @@
             <div id="PageCounter">PAGE ... OF ...</div>
             <button id="NextPage">NEXT >>></button>
         </div>
+<%--
         <div class = "col-md-5">
             <td style="vertical-align:top;padding:10px;">
                 <input type="text" id="search"/>
                 <button onclick="searchArticle();">Search</button>
             </td>
         </div>
+--%>
     </div>
 </div>
 
@@ -72,6 +74,11 @@
         </div>
     </div>
 </div>
+
+<input id="pageNum" type="hidden" value="1"/>
+<input id="page" type="hidden" value="1"/>
+<input id="sort" type="hidden" value="object_id"/>
+<input id="reversed" type="hidden" value="0"/>
 
 </body>
 </html>

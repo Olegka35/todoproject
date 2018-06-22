@@ -2,6 +2,8 @@
  * Created by Олег on 09.03.2017.
  */
 
+var params = [];
+
 $(document).ready(function(){
     $(".article_row").click(function () {
         $.post('/article', {'id': this.id}, function (data) {
@@ -25,7 +27,9 @@ $(document).ready(function(){
         goPage(page+1)
     });
     $(".delbasket").click(function () {
-        deleteFromBasket(this.id.substr(14));
+        if(confirm("Are you sure you want to delete this item from your basket?") === true) {
+            deleteFromBasket(this.id.substr(14));
+        }
     });
 });
 
@@ -52,22 +56,90 @@ function showArticleInfo(article)
         showEdit(article);
     });
     $('#delete').click(function () {
-        $.post('/index/delete', {'id': article.id}, function (data) {
-            window.location.reload();
-        });
+        if(confirm("Are you sure you want to delete this article (" + article.type + ")?") === true) {
+            $.post('/index/delete', {id: article.id}, function (data) {
+                if(data.error == true) {
+                    $.msgGrowl({
+                        type: 'error',
+                        title: 'Delete',
+                        text: data.text
+                    });
+                }
+                else {
+                    $.msgGrowl({
+                        type: 'success',
+                        title: 'Delete',
+                        text: 'Article has been successfully deleted'
+                    });
+                    reloadTable();
+                }
+            });
+        }
     });
 }
 
 function showEdit(article) {
+    params = ['ID', 'Type', 'Price', 'Num'];
     $('input#edit_ID').prop('value', article.id);
     $('input#edit_Type').prop('value', article.type);
     $('input#edit_Price').prop('value', article.price);
     $('input#edit_Num').prop('value', article.num);
     $.each(article.details, function(key, value) {
         $('input#edit_' + key).prop('value', value);
+        params.push(key);
     });
     $("#popup_edit").modal('show');
     return false;
+}
+
+function editArticle()
+{
+    $.post('/index/edit', $("#edit_form_post").serialize(), function (data) {
+        if(data.error == true) {
+            $.msgGrowl({
+                type: 'error',
+                title: 'Delete',
+                text: data.text
+            });
+        }
+        else {
+            $.msgGrowl({
+                type: 'success',
+                title: 'Delete',
+                text: 'Article has been changed'
+            });
+            $("#popup_edit").modal('hide');
+            reloadTable();
+        }
+    });
+}
+
+function addArticle()
+{
+    $.post('/index/add', $("#add_form_post").serialize(), function (data) {
+        if(data.error == true) {
+            $.msgGrowl({
+                type: 'error',
+                title: 'Add new article',
+                text: data.text
+            });
+        }
+        else {
+            $.msgGrowl({
+                type: 'success',
+                title: 'Add new article',
+                text: 'Article has been added'
+            });
+            $("#popup_add").modal('hide');
+            reloadTable();
+        }
+    });
+}
+
+function reloadTable() {
+    $.post('/get_articles', {page: $('#page').val(), sort: $('#sort').val(), reversed: $('#reversed').val(), search: $('#search').val()}, function (data) {
+        updateTable(data);
+    });
 }
 
 function addToBasket(article) {
@@ -80,28 +152,20 @@ function addToBasket(article) {
         });
     }
     else {
-        $.ajax({
-            type: "POST",
-            url: "/add_to_basket",
-            contentType: "application/json",
-            data: JSON.stringify({num: num, article_id: article.id}),
-            dataType: "json",
-            cache: false,
-            success: function(data) {
-                if(data.error === true) {
-                    $.msgGrowl({
-                        type: 'error',
-                        title: 'Basket',
-                        text: data.text
-                    });
-                }
-                else {
-                    $.msgGrowl({
-                        type: 'success',
-                        title: 'Basket',
-                        text: 'Item was added in your basket. Go there to make on order'
-                    });
-                }
+        $.post('/add_to_basket', {num: num, article_id: article.id}, function (data) {
+            if(data.error === true) {
+                $.msgGrowl({
+                    type: 'error',
+                    title: 'Basket',
+                    text: data.text
+                });
+            }
+            else {
+                $.msgGrowl({
+                    type: 'success',
+                    title: 'Basket',
+                    text: 'Item was added in your basket. Go there to make on order'
+                });
             }
         });
     }
@@ -109,19 +173,15 @@ function addToBasket(article) {
 
 function sort(field)
 {
-    $.ajax({
-        type: "POST",
-        url: "/index/sort",
-        contentType: "application/json",
-        data: ({"field": field}),
-        dataType: "json",
-        success: function(data) {
-            updateTable(data);
-        },
-        error: function (error) {
-            alert("ERROR!");
-        }
-    });
+    $('#page').val(1);
+    if($('#sort').val() == field) {
+        $('#reversed').val($('#reversed').val() == '0' ? '1' : '0');
+    }
+    else {
+        $('#sort').val(field);
+        $('#reversed').val('0');
+    }
+    reloadTable();
 }
 
 function filterTable(field) {
@@ -146,20 +206,36 @@ function filterTable(field) {
 }
 
 function searchArticle() {
-    var text = $('#search').val();
-    $.ajax({
-        type: "POST",
-        url: "/index/search",
-        contentType: "application/json",
-        data: JSON.stringify({text: text}),
-        dataType: "json",
-        success: function(data) {
-            updateTable(data);
-        },
-        error: function (error) {
-            alert("ERROR!");
-        }
+    $('#page').val(1);
+    $('#sort').val('object_id');
+    $('#reversed').val('0');
+    reloadTable();
+}
+
+function goPage(page)
+{
+    var pageNum = $('#pageNum').val();
+    if(!(page < 1 || page > pageNum)) {
+        $('#page').val(page);
+        reloadTable();
+    }
+}
+
+function updateTable(data) {
+    $('.article_row').remove();
+    var list = data.articleList;
+    list.forEach(function (task) {
+        addRow(task);
     });
+    //$('#page').val(data.page);
+    $('#pageNum').val(data.pageNum);
+    $('#PrevPage').unbind('click').click(function() {
+        goPage(data.page-1)
+    });
+    $('#NextPage').unbind('click').click(function() {
+        goPage(data.page+1)
+    });
+    $('#PageCounter').html("PAGE " + data.page + " OF " + data.pageNum);
 }
 
 function addRow(article)
@@ -174,42 +250,6 @@ function addRow(article)
             showArticleInfo(data);
         });
     });
-}
-
-function goPage(page)
-{
-    var pageNum = $('#pageNum').val();
-    if(!(page < 1 || page > pageNum)) {
-        $.ajax({
-            type: "POST",
-            url: "/index/page",
-            contentType: "application/json",
-            data: ({"page": page}),
-            dataType: "json",
-            success: function(data) {
-                updateTable(data);
-            },
-            error: function (error) {
-                alert("ERROR!");
-            }
-        });
-    }
-}
-
-function updateTable(data) {
-    $('.article_row').remove();
-    var list = data.articleList;
-    list.forEach(function (task) {
-        addRow(task);
-    });
-    $('#pageNum').val(data.pageNum);
-    $('#PrevPage').unbind('click').click(function() {
-        goPage(data.page-1)
-    });
-    $('#NextPage').unbind('click').click(function() {
-        goPage(data.page+1)
-    });
-    $('#PageCounter').html("PAGE " + data.page + " OF " + data.pageNum);
 }
 
 function formatDate(datestr) {
@@ -338,36 +378,52 @@ function checkBasket() {
 }
 
 function make_order() {
-    $.ajax({
-        type: "POST",
-        url: "/order",
-        contentType: "application/json",
-        data: JSON.stringify({name: $("#input_name").val(), email: $("#input_email").val(), telephone: $("#input_telephone").val(),
-            address: $("#input_address").val(), pay_type: $('input[name=pay_type]:checked').val() }),
-        dataType: "json",
-        success: function(data) {
-            if(data.error === true) {
-                $.msgGrowl({
-                    type: 'error',
-                    title: 'Creating the order',
-                    text: data.text
-                });
-            }
-            else {
-                $('#make_order_popup').modal('hide');
-                $.msgGrowl({
-                    type: 'success',
-                    title: 'Creating the order',
-                    text: 'Order have been created. Please, wait a telephone call from our operator.'
-                });
-                $('.bi_row').remove();
-            }
+    $.post('/order', {name: $("#input_name").val(), email: $("#input_email").val(), telephone: $("#input_telephone").val(), address: $("#input_address").val(), pay_type: $('input[name=pay_type]:checked').val() }, function (data) {
+        if(data.error === true) {
+            $.msgGrowl({
+                type: 'error',
+                title: 'Creating the order',
+                text: data.text
+            });
+        }
+        else {
+            $('#make_order_popup').modal('hide');
+            $.msgGrowl({
+                type: 'success',
+                title: 'Creating the order',
+                text: 'Order have been created. Please, wait a telephone call from our operator.'
+            });
+            getOverallPrice();
+            $('.bi_row').remove();
         }
     });
+
 }
 
 function getOverallPrice() {
     $.post('/basket_price', function (data) {
         $('#ov_price').text(data);
     });
+}
+
+function showMyOrders(login) {
+    $.post('/my_orders', {login: login}, function (data) {
+        $('#my_orders_body').empty();
+        data.forEach(function (order) {
+            $('#my_orders_body').append('<tr id="' + order.id + '" class="order_row"></tr>');
+            $('#' + order.id).append('<td>' + order.id + '</td>');
+            $('#' + order.id).append('<td>' + order.price + '$</td>');
+            $('#' + order.id).append('<td>' + formatDateUNIX(order.date) + '</td>');
+            $('#' + order.id).append('<td id="status'+order.id+'">' + getStatus(order.status) + '</td>');
+        });
+    });
+}
+
+function getStatus(status) {
+    if(status == 0)
+        return "Waiting";
+    else if(status == 1)
+        return "In processing";
+    else if(status == 2)
+        return "Completed";
 }

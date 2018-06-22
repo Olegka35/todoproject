@@ -13,10 +13,7 @@ import oper_project.dao.DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Олег on 08.06.2018.
@@ -154,7 +151,7 @@ public class DaoImpl implements DAO {
 
     @Override
     public List<Map<String, Object>> getList(String type, Integer first, Integer num, String order_field, Boolean reversed, Map<String, String> filterMap) {
-        String SELECT_QUERY = "SELECT DISTINCT  obj.object_id FROM object AS obj " +
+        String SELECT_QUERY = "SELECT DISTINCT obj.object_id FROM object AS obj " +
                 "JOIN params ON obj.object_id = params.object_id ";
         List<Integer> ids;
         /* Поле сортировки */
@@ -169,7 +166,10 @@ public class DaoImpl implements DAO {
 
         /* Порядок сортировки */
         if(order_field != null) {
-            if (!order_field.equals("object_id"))
+            if(type.equals("article") && Arrays.asList("Num", "Price").contains(order_field)) {
+                SELECT_QUERY += "ORDER BY CONVERT(extra.val, UNSIGNED)";
+            }
+            else if (!order_field.equals("object_id"))
                 SELECT_QUERY += "ORDER BY extra.val";
             else
                 SELECT_QUERY += "ORDER BY params.object_id";

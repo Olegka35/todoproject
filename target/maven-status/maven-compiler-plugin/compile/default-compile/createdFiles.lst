@@ -1,9 +1,6 @@
-oper_project\dao\TaskDao.class
 oper_project\controller\OrderController.class
 oper_project\service\OrderService.class
-oper_project\dao\impl\TaskDaoImpl.class
 oper_project\domain\html_requests\MakeOrder.class
-oper_project\methods\ArticleCookie.class
 oper_project\methods\HashString.class
 oper_project\domain\html_requests\AddToBasketAttr.class
 oper_project\methods\UserQuery.class
@@ -29,7 +26,6 @@ oper_project\configuration\SpringJDBCConfiguration.class
 oper_project\domain\OrderItem.class
 oper_project\dao\impl\DaoImpl$1.class
 oper_project\configuration\PageConfiguration.class
-oper_project\dao\impl\TaskDaoImpl$1.class
 oper_project\service\impl\BasketServiceImpl.class
 oper_project\methods\FilterQuery.class
 oper_project\domain\html_requests\OrderList.class

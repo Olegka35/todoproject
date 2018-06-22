@@ -29,7 +29,8 @@ public class ArticleServiceImpl implements ArticleService {
         params.put("Num", article.getNum().toString());
         params.put("Price", article.getPrice().toString());
         for (Map.Entry<String, Object> entry: article.getDetails().entrySet()) {
-            params.put(entry.getKey(), entry.getValue().toString());
+            if (new OperatorServiceImpl().getAttrIDByName(entry.getKey()) != null)
+                params.put(entry.getKey(), entry.getValue().toString());
         }
         dao.add("article", params, "Type");
     }
@@ -37,11 +38,17 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public void update(Article article) {
         Map<String, String> params = new HashMap<String, String>();
-        params.put("Type", article.getType());
-        params.put("Num", article.getNum().toString());
-        params.put("Price", article.getPrice().toString());
-        for (Map.Entry<String, Object> entry: article.getDetails().entrySet()) {
-            params.put(entry.getKey(), entry.getValue().toString());
+        if(article.getType() != null)
+            params.put("Type", article.getType());
+        if(article.getNum() != null)
+            params.put("Num", article.getNum().toString());
+        if(article.getPrice() != null)
+            params.put("Price", article.getPrice().toString());
+        if(article.getDetails() != null) {
+            for (Map.Entry<String, Object> entry : article.getDetails().entrySet()) {
+                if (new OperatorServiceImpl().getAttrIDByName(entry.getKey()) != null)
+                    params.put(entry.getKey(), entry.getValue().toString());
+            }
         }
         dao.update(article.getId(), params);
     }
@@ -138,14 +145,19 @@ public class ArticleServiceImpl implements ArticleService {
 
     private Article convertMapToArticle(Map<String, Object> map)
     {
-        Integer id = Integer.parseInt(map.get("ID").toString());
-        String type = map.get("Type").toString();
-        Integer num = Integer.parseInt(map.get("Num").toString());
-        Integer price = Integer.parseInt(map.get("Price").toString());
-        map.remove("ID");
-        map.remove("Type");
-        map.remove("Num");
-        map.remove("Price");
-        return new Article(id, type, map, num, price);
+        try {
+            Integer id = Integer.parseInt(map.get("ID").toString());
+            String type = map.get("Type").toString();
+            Integer num = Integer.parseInt(map.get("Num").toString());
+            Integer price = Integer.parseInt(map.get("Price").toString());
+            map.remove("ID");
+            map.remove("Type");
+            map.remove("Num");
+            map.remove("Price");
+            return new Article(id, type, map, num, price);
+        }
+        catch (Exception e) {
+            return null;
+        }
     }
 }

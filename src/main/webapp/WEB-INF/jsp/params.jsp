@@ -26,7 +26,7 @@
     <div class = "row">
         <div class = "col-md-6">
             <nav class="nav nav-inline">
-                <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+                <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">
                     <b><a class="nav-link active" href="<c:url value="/basket"/>"><security:authentication property="principal.username" /></a></b>
                     <a class="nav-link" href="<c:url value="/index"/>">Main page</a>
                     <a class="nav-link" href="<c:url value="/orders"/>">Order list</a>

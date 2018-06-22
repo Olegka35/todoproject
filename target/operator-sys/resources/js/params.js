@@ -3,32 +3,32 @@
  */
 $(document).ready(function(){
     $('.delete_attr').click(function() {
-        deleteAttr($(this).attr('id'));
+        if(confirm("Are you sure you want to delete this param?") === true) {
+            deleteAttr($(this).attr('id'));
+        }
     });
 });
 
 
 function add_param() {
-    if($('#newparam').val().length == 0) console.log('Error');
+    if($('#newparam').val().length == 0) {
+        $.msgGrowl({
+            type: 'error',
+            title: 'Adding',
+            text: 'Param name is empty'
+        });
+    }
     else {
-        $.ajax({
-            type: "POST",
-            url: "/params/addparam",
-            contentType: "application/json",
-            data: JSON.stringify({name: $('#newparam').val()}),
-            dataType: "json",
-            cache: false,
-            success: function(data) {
-                if(data.error == true) {
-                    $.msgGrowl({
-                        type: 'error',
-                        title: 'Adding',
-                        text: data.text
-                    });
-                }
-                else {
-                    window.location.reload();
-                }
+        $.post('/params/addparam', {name: $('#newparam').val()}, function (data) {
+            if(data.error == true) {
+                $.msgGrowl({
+                    type: 'error',
+                    title: 'Adding',
+                    text: data.text
+                });
+            }
+            else {
+                window.location.reload();
             }
         });
     }
@@ -36,29 +36,21 @@ function add_param() {
 
 function deleteAttr(id)
 {
-    $.ajax({
-        type: "POST",
-        url: "/params/delete",
-        contentType: "application/json",
-        data: JSON.stringify({id: id}),
-        dataType: "json",
-        cache: false,
-        success: function(data) {
-            if(data.error == true){
-                $.msgGrowl({
-                    type: 'error',
-                    title: 'Delete',
-                    text: data.text
-                });
-            }
-            else {
-                $('#attr_' + id).remove();
-                $.msgGrowl({
-                    type: 'success',
-                    title: 'Delete',
-                    text: 'Attribute deleted succesfully!'
-                });
-            }
+    $.post('/params/delete', {id: id}, function (data) {
+        if(data.error == true){
+            $.msgGrowl({
+                type: 'error',
+                title: 'Delete',
+                text: data.text
+            });
+        }
+        else {
+            $('#attr_' + id).remove();
+            $.msgGrowl({
+                type: 'success',
+                title: 'Delete',
+                text: 'Attribute deleted succesfully!'
+            });
         }
     });
 }

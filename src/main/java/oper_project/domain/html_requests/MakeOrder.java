@@ -3,9 +3,17 @@ package oper_project.domain.html_requests;
 public class MakeOrder {
     private String name;
     private String email;
-    private String telephone;
     private String address;
-    private String pay_type;
+    private String number;
+    private String payType;
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 
     public String getName() {
         return name;
@@ -23,14 +31,6 @@ public class MakeOrder {
         this.email = email;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -39,11 +39,11 @@ public class MakeOrder {
         this.address = address;
     }
 
-    public String getPay_type() {
-        return pay_type;
+    public String getPayType() {
+        return payType;
     }
 
-    public void setPay_type(String pay_type) {
-        this.pay_type = pay_type;
+    public void setPayType(String payType) {
+        this.payType = payType;
     }
 }

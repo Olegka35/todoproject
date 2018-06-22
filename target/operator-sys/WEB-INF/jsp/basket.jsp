@@ -32,7 +32,7 @@
         <nav class="nav nav-inline">
             <a class="nav-link active" href="#"><security:authentication property="principal.username" /></a>
             <a class="nav-link" href="/index">Back to shop</a>
-            <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+            <security:authorize access="hasAnyRole('ROLE_ADMIN', 'ROLE_MANAGER')">
                 <a class="nav-link" href="<c:url value="/params"/>">Moderator page</a>
                 <a class="nav-link" href="<c:url value="/orders"/>">Order list</a>
             </security:authorize>
@@ -58,6 +58,19 @@
             </tbody>
         </table>
         <a class="btn btn-success" style="float: right" onclick="javascript: checkBasket();">Make an order</a>
+        <br/><br/><br/>
+
+        <table id="my_orders" class="table">
+            <thead class="thead-default"><tr>
+                <th>ORDER_ID</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th></th>
+            </tr></thead>
+            <tbody id="my_orders_body">
+            </tbody>
+        </table>
         </div>
     </div>
 </div>
@@ -112,6 +125,7 @@
 
 <script language="JavaScript" type="text/javascript">
     getOverallPrice();
+    showMyOrders('<security:authentication property="principal.username" />');
 </script>
 </body>
 </html>

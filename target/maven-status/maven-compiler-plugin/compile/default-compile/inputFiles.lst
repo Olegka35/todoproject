@@ -17,9 +17,7 @@ I:\Oleg\operator\src\main\java\oper_project\service\impl\OrderServiceImpl.java
 I:\Oleg\operator\src\main\java\oper_project\service\impl\ArticleServiceImpl.java
 I:\Oleg\operator\src\main\java\oper_project\domain\Article.java
 I:\Oleg\operator\src\main\java\oper_project\domain\html_requests\ArticleList.java
-I:\Oleg\operator\src\main\java\oper_project\methods\ArticleCookie.java
 I:\Oleg\operator\src\main\java\oper_project\service\TaskService.java
-I:\Oleg\operator\src\main\java\oper_project\dao\impl\TaskDaoImpl.java
 I:\Oleg\operator\src\main\java\oper_project\controller\ArticleController.java
 I:\Oleg\operator\src\main\java\oper_project\domain\html_requests\OrderList.java
 I:\Oleg\operator\src\main\java\oper_project\methods\FilterQuery.java
@@ -27,7 +25,6 @@ I:\Oleg\operator\src\main\java\oper_project\configuration\PageConfiguration.java
 I:\Oleg\operator\src\main\java\oper_project\domain\html_requests\GetOrderList.java
 I:\Oleg\operator\src\main\java\oper_project\controller\RestControllerOld.java
 I:\Oleg\operator\src\main\java\oper_project\domain\Operator.java
-I:\Oleg\operator\src\main\java\oper_project\dao\TaskDao.java
 I:\Oleg\operator\src\main\java\oper_project\domain\OperatorRoleEnum.java
 I:\Oleg\operator\src\main\java\oper_project\methods\UserQuery.java
 I:\Oleg\operator\src\main\java\oper_project\domain\html_requests\MakeOrder.java

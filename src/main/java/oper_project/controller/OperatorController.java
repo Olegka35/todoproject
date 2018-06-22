@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import oper_project.domain.Article;
-import oper_project.domain.html_requests.Attribute;
 import oper_project.domain.Operator;
 import oper_project.service.ArticleService;
 import oper_project.service.OperatorService;
@@ -70,14 +69,14 @@ public class OperatorController {
 
     @RequestMapping(value = "/params/addparam", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> addParam(@RequestBody Attribute attr) {
+    public Map<String, Object> addParam(@RequestParam("name") String name) {
         Map<String, Object> responseMap = new HashMap<String, Object>();
-        if (operatorService.getAttrIDByName(attr.getName()) != null) {
+        if (operatorService.getAttrIDByName(name) != null) {
             responseMap.put("error", true);
             responseMap.put("text", "Attribute is already exist");
         }
         else {
-            operatorService.addArticleParam(attr.getName());
+            operatorService.addArticleParam(name);
             responseMap.put("error", false);
         }
         return responseMap;
@@ -85,7 +84,7 @@ public class OperatorController {
 
     @RequestMapping(value = "/params/delete", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> deleteParam(@RequestBody Attribute attr) {
+    public Map<String, Object> deleteParam(@RequestParam("id") Integer id) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         Operator user = operatorService.getUser(auth.getName());
         Map<String, Object> responseMap = new HashMap<String, Object>();
@@ -95,7 +94,7 @@ public class OperatorController {
             responseMap.put("error", true);
         }
         else {
-            if (operatorService.deleteArticleParam(attr.getId())) {
+            if (operatorService.deleteArticleParam(id)) {
                 responseMap.put("error", false);
             }
             else {
@@ -105,68 +104,5 @@ public class OperatorController {
         }
         return responseMap;
     }
-    /*@RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public ModelAndView displayUsers() {
-        UserList userList = new UserList();
-        userList.setUserList(userService.getAllUsers(1));
-        userList.setPage(1);
-        userList.setPageNumEx(userService.getAllUsers().size());
 
-        return new ModelAndView("admin", "userList", userList);
-    }
-
-    @RequestMapping(value = "/admin/search_task", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    TaskList searchTasks(@RequestBody SearchText field) {
-        String search = field.getText();
-        TaskList taskList = new TaskList();
-        taskList.setArticleList(taskService.getArticleList(field.getPage(), search));
-        taskList.setPage(field.getPage());
-        taskList.setPageNumEx(taskService.getArticleList(search).size());
-        taskList.setSearch(search);
-        return taskList;
-    }
-
-    @RequestMapping(value = "/admin/delete", method = RequestMethod.POST)
-    public @ResponseBody UserList deleteUser(@RequestBody UserQuery userQuery) {
-        if(userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()).getID() != userQuery.getUserID())
-            userService.delete(userQuery.getUserID());
-
-        UserList userList = new UserList();
-        userList.setUserList(userService.getAllUsers(userQuery.getPage()));
-        userList.setPage(userQuery.getPage());
-        userList.setPageNumEx(userService.getAllUsers().size());
-        return userList;
-    }
-
-    @RequestMapping(value = "/admin/role", method = RequestMethod.POST)
-    public @ResponseBody UserList changeUserRole(@RequestBody UserQuery userQuery) {
-        User user = userService.getById(userQuery.getUserID());
-        if (user != null && userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()).getID() != userQuery.getUserID()) {
-            if(user.getRole().equals("ROLE_ADMIN"))
-                user.setRole("ROLE_USER");
-            else
-                user.setRole("ROLE_ADMIN");
-            userService.update(user);
-        }
-
-        UserList userList = new UserList();
-        userList.setUserList(userService.getAllUsers(userQuery.getPage()));
-        userList.setPage(userQuery.getPage());
-        userList.setPageNumEx(userService.getAllUsers().size());
-        return userList;
-    }
-
-    @RequestMapping(value = "/admin/page", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    UserList userPage(@RequestBody SearchText field) {
-        Integer page = field.getPage();
-        UserList userList = new UserList();
-        userList.setUserList(userService.getAllUsers(page));
-        userList.setPage(page);
-        userList.setPageNumEx(userService.getAllUsers().size());
-        return userList;
-    }*/
 }

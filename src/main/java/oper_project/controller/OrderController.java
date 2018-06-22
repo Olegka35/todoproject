@@ -8,8 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import oper_project.domain.*;
-import oper_project.domain.html_requests.AddToBasketAttr;
-import oper_project.domain.html_requests.MakeOrder;
 import oper_project.domain.html_requests.OrderList;
 import oper_project.service.ArticleService;
 import oper_project.service.BasketService;
@@ -35,7 +33,7 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @ModelAttribute("operatorBean")
+    /*@ModelAttribute("operatorBean")
     public Operator createOperatorBean() {
         return new Operator();
     }
@@ -48,7 +46,7 @@ public class OrderController {
     @ModelAttribute("basketBean")
     public BasketItem createBasketBean() {
         return new BasketItem();
-    }
+    }*/
 
     @RequestMapping(value = "/basket", method = RequestMethod.GET)
     public ModelAndView showBasket(HttpServletRequest request, HttpServletResponse response) {
@@ -79,7 +77,19 @@ public class OrderController {
             List<Order> listOfOrders = orderService.getOrderList(page, "Order_Date", true);
             orderList.setOrderList(listOfOrders);
             orderList.setPage(page);
-            orderList.setPageNumEx(listOfOrders.size());
+            orderList.setPageNumEx(orderService.getOrderList().size());
+        }
+        return orderList;
+    }
+
+    @RequestMapping(value = "/my_orders", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Order> showOrderList(@RequestParam("login") String login) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Operator user = operatorService.getUser(auth.getName());
+        List<Order> orderList = new ArrayList<>();
+        if(user != null && user.getLogin().equals(login)) {
+            orderList = orderService.getUserOrderList(user.getID());
         }
         return orderList;
     }
@@ -110,7 +120,7 @@ public class OrderController {
 
     @RequestMapping(value = "/add_to_basket", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> addToBasket(@RequestBody AddToBasketAttr attr) {
+    public Map<String, Object> addToBasket(@RequestParam("article_id") Integer article_id, @RequestParam("num") Integer num) {
         Map<String, Object> responseMap = new HashMap<String, Object>();
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -126,22 +136,22 @@ public class OrderController {
                 responseMap.put("text", "Your account does not exist");
             }
             else {
-                Article article = articleService.getById(attr.getArticle_id());
+                Article article = articleService.getById(article_id);
                 if(article == null) {
                     responseMap.put("error", true);
                     responseMap.put("text", "Article does not exist. Please, reload the page.");
                 }
-                else if(article.getNum() < attr.getNum()) {
+                else if(article.getNum() < num) {
                     responseMap.put("error", true);
                     responseMap.put("text", "Out of stock");
                 }
                 else {
                     responseMap.put("error", false);
-                    BasketItem tryFind = basketService.getByArticle(article.getId());
+                    BasketItem tryFind = basketService.getByArticle(user.getID(), article.getId());
                     if(tryFind == null)
-                        basketService.add(new BasketItem(-1, user.getID(), article, attr.getNum()));
+                        basketService.add(new BasketItem(-1, user.getID(), article, num));
                     else
-                        basketService.update(new BasketItem(tryFind.getId(), user.getID(), article, tryFind.getNum() + attr.getNum()));
+                        basketService.update(new BasketItem(tryFind.getId(), user.getID(), article, tryFind.getNum() + num));
                 }
             }
         }
@@ -195,7 +205,11 @@ public class OrderController {
 
     @RequestMapping(value = "/order", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> makeOrder(@RequestBody MakeOrder order) {
+    public Map<String, Object> makeOrder(@RequestParam("name") String name,
+                                         @RequestParam("email") String email,
+                                         @RequestParam("telephone") String telephone,
+                                         @RequestParam("address") String address,
+                                         @RequestParam("pay_type") String pay_type) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         Operator user = operatorService.getUser(auth.getName());
         Integer userID = user.getID();
@@ -207,15 +221,7 @@ public class OrderController {
             responseMap.put("text", result);
         }
         else {
-            List<OrderItem> details = new ArrayList<>();
-            List<BasketItem> basketItems = basketService.getByUserID(userID);
-            for(BasketItem item: basketItems) {
-                Article article = item.getArticle();
-                details.add(new OrderItem(article.getType(), article.getPrice(), item.getNum()));
-                article.setNum(article.getNum() - item.getNum());
-                articleService.update(article);
-            }
-            orderService.addOrder(new Order(-1, user, order.getName(), order.getEmail(), order.getAddress(), order.getTelephone(), new Date(), basketService.getPrice(userID), 0, order.getPay_type(), details));
+            basketService.makeOrder(user, name, email, telephone, address, pay_type);
             basketService.deleteByUserID(userID);
             responseMap.put("error", false);
         }
